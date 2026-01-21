@@ -1,0 +1,137 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Femto Films — Production audiovisuelle</title>
+    <meta name="description" content="Femto Films, société de production audiovisuelle. Pub, films corporate, post-production." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#top" aria-label="Femto Films, accueil">
+          <span>Femto Films</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span class="burger" aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+          <a href="#top">Accueil</a>
+          <a href="#offres">Offres</a>
+          <a href="#apropos">À propos</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="top" class="section hero" data-reveal>
+        <div class="hero-media" aria-hidden="true">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/showreel-poster.jpg"
+          >
+            <source src="assets/showreel.mp4" type="video/mp4" />
+          </video>
+          <img class="hero-poster" src="assets/showreel-poster.jpg" alt="" />
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container hero-content">
+          <p class="eyebrow">Femto Films</p>
+          <h1>Société de production audiovisuelle</h1>
+          <p class="hero-offer">Pub — Films corpo — Post-production</p>
+          <a class="btn" href="#contact">Nous contacter</a>
+        </div>
+      </section>
+
+      <section id="offres" class="section" data-reveal>
+        <div class="container">
+          <h2>Offres</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Pub</h3>
+              <p>Des formats courts, efficaces, pensés pour marquer rapidement les esprits.</p>
+            </article>
+            <article class="card">
+              <h3>Films corpo</h3>
+              <p>Des récits clairs et humains pour valoriser votre culture et vos équipes.</p>
+            </article>
+            <article class="card">
+              <h3>Post-production</h3>
+              <p>Montage, étalonnage, son : une finition soignée et cohérente.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="apropos" class="section" data-reveal>
+        <div class="container two-col">
+          <div>
+            <h2>Qui nous sommes</h2>
+            <p>
+              Femto Films accompagne les marques et les équipes internes dans la production de contenus
+              audiovisuels précis et élégants. Nous privilégions l'écoute, la préparation et une
+              réalisation fluide pour servir le message sans artifice. Notre exigence se traduit par une
+              image nette, un son maîtrisé et une post-production attentive aux détails.
+            </p>
+          </div>
+          <div class="points">
+            <p>Écoute</p>
+            <p>Image &amp; son</p>
+            <p>Post-prod soignée</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section" data-reveal>
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-grid">
+            <form id="contact-form" novalidate>
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+
+              <button class="btn" type="submit">Envoyer</button>
+              <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+
+              <div id="form-actions" class="form-actions" hidden>
+                <button type="button" class="btn ghost" id="copy-message">Copier le message</button>
+                <a class="btn ghost" id="mailto-link" href="#">Ouvrir le client mail</a>
+              </div>
+            </form>
+
+            <div class="contact-details">
+              <p><strong>Email</strong><br />contact@femtofilms.fr</p>
+              <p><strong>Réseaux</strong><br />instagram.com/femtofilms</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Femto Films — Tous droits réservés <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
