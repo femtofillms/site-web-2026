@@ -1,11 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
-
 :root {
-  --black: #0a0a0a;
-  --white: #f7f7f7;
-  --gray-100: #e6e6e6;
-  --gray-200: #cfcfcf;
-  --gray-300: #9a9a9a;
+  --c-black: #0a0a0a;
+  --c-white: #f7f7f7;
+  --c-gray: #bdbdbd;
+  --c-claret: #911041;
+  --font-main: "Space Grotesk", sans-serif;
+  --text-h1: clamp(2rem, 3vw + 1rem, 3.5rem);
+  --text-h2: clamp(1.1rem, 1.4vw + 0.7rem, 1.6rem);
+  --text-body: 1rem;
+  --text-small: 0.9rem;
+  --line-height: 1.6;
   --max-width: 1100px;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -21,14 +24,16 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-main);
 }
 
 body {
   margin: 0;
-  font-family: "Space Grotesk", "Helvetica Neue", sans-serif;
-  color: var(--white);
-  background: var(--black);
-  line-height: 1.6;
+  font-family: var(--font-main);
+  font-size: var(--text-body);
+  color: var(--c-white);
+  background: var(--c-black);
+  line-height: var(--line-height);
   position: relative;
 }
 
@@ -43,7 +48,7 @@ body::after {
     transparent 1px,
     transparent 3px
   );
-  opacity: 0.08;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 999;
 }
@@ -58,12 +63,21 @@ a {
   text-decoration: none;
 }
 
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main);
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 .team-card:focus-visible {
-  outline: 2px solid var(--white);
+  outline: 2px solid var(--c-claret);
   outline-offset: 2px;
 }
 
@@ -71,8 +85,8 @@ textarea:focus-visible,
   position: absolute;
   left: -999px;
   top: var(--space-sm);
-  background: var(--white);
-  color: var(--black);
+  background: var(--c-white);
+  color: var(--c-black);
   padding: var(--space-xs) var(--space-sm);
   z-index: 999;
 }
@@ -88,12 +102,12 @@ textarea:focus-visible,
 
 .section {
   padding: var(--space-xl) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.08);
 }
 
 .section-subtitle {
   margin: 0 0 var(--space-lg);
-  color: var(--gray-200);
+  color: var(--c-gray);
   font-size: 1rem;
 }
 
@@ -103,7 +117,7 @@ textarea:focus-visible,
   background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(10px);
   z-index: 10;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.08);
 }
 
 .header-inner {
@@ -119,42 +133,42 @@ textarea:focus-visible,
 }
 
 .back-link {
-  color: var(--gray-200);
+  color: var(--c-gray);
   font-size: 0.95rem;
 }
 
 .back-link:hover,
 .back-link:focus-visible {
-  color: var(--white);
+  color: var(--c-claret);
 }
 
 .site-nav {
   display: flex;
   gap: var(--space-md);
-  font-size: 0.95rem;
+  font-size: var(--text-small);
 }
 
 .site-nav a {
-  color: var(--gray-100);
+  color: var(--c-gray);
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--white);
+  color: var(--c-claret);
 }
 
 .nav-toggle {
   display: none;
   background: transparent;
   border: none;
-  color: var(--white);
+  color: var(--c-white);
 }
 
 .burger {
   display: block;
   width: 26px;
   height: 2px;
-  background: var(--white);
+  background: var(--c-white);
   position: relative;
 }
 
@@ -165,7 +179,7 @@ textarea:focus-visible,
   left: 0;
   width: 26px;
   height: 2px;
-  background: var(--white);
+  background: var(--c-white);
   transition: transform 0.2s ease;
 }
 
@@ -195,7 +209,7 @@ textarea:focus-visible,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
+  background: var(--c-black);
 }
 
 .hero-video,
@@ -234,7 +248,7 @@ textarea:focus-visible,
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--gray-200);
+  color: var(--c-gray);
   font-size: 0.8rem;
   margin-bottom: var(--space-sm);
 }
@@ -243,15 +257,15 @@ h1,
 h2,
 h3 {
   margin: 0 0 var(--space-sm);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h1 {
-  font-size: clamp(2rem, 3vw + 1rem, 3.5rem);
+  font-size: var(--text-h1);
 }
 
 h2 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 2.4rem);
+  font-size: var(--text-h2);
 }
 
 h3 {
@@ -260,7 +274,7 @@ h3 {
 
 .hero-offer {
   font-size: 1.1rem;
-  color: var(--gray-200);
+  color: var(--c-gray);
   margin-bottom: var(--space-md);
 }
 
@@ -270,10 +284,10 @@ h3 {
   justify-content: center;
   padding: 0.75rem 2rem;
   border-radius: var(--radius);
-  border: 1px solid var(--white);
-  background: var(--white);
-  color: var(--black);
-  font-weight: 600;
+  border: 1px solid var(--c-claret);
+  background: var(--c-claret);
+  color: var(--c-white);
+  font-weight: 500;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
@@ -284,12 +298,12 @@ h3 {
 
 .btn.ghost {
   background: transparent;
-  color: var(--white);
+  color: var(--c-white);
 }
 
 .productions {
-  background: var(--black);
-  color: var(--white);
+  background: var(--c-black);
+  color: var(--c-white);
 }
 
 .section-head {
@@ -300,7 +314,7 @@ h3 {
 }
 
 .productions h2 {
-  font-size: clamp(1.1rem, 1.4vw + 0.7rem, 1.6rem);
+  font-size: var(--text-h2);
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -316,7 +330,7 @@ h3 {
   padding-bottom: var(--space-sm);
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  scrollbar-color: rgba(247, 247, 247, 0.3) transparent;
 }
 
 .project-slider::-webkit-scrollbar {
@@ -324,14 +338,14 @@ h3 {
 }
 
 .project-slider::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(247, 247, 247, 0.3);
   border-radius: 999px;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0px;
+  background: rgba(247, 247, 247, 0.02);
+  border: 1px solid rgba(247, 247, 247, 0.12);
+  border-radius: 0;
   overflow: hidden;
   scroll-snap-align: start;
   display: flex;
@@ -354,14 +368,15 @@ h3 {
 
 .team-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-md);
 }
 
 .team-card {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 0px;
+  border: 1px solid rgba(247, 247, 247, 0.12);
+  border-radius: 0;
   padding: var(--space-sm);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(247, 247, 247, 0.02);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -371,7 +386,8 @@ h3 {
 .team-photo {
   position: relative;
   overflow: hidden;
-  border-radius: 0px;
+  border-radius: 0;
+  aspect-ratio: 4 / 5;
 }
 
 .team-photo img {
@@ -380,15 +396,11 @@ h3 {
   object-fit: cover;
 }
 
-.team-photo {
-  aspect-ratio: 4 / 5;
-}
-
 .team-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
-  color: var(--white);
+  color: var(--c-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -412,8 +424,8 @@ h3 {
 
 .team-role {
   margin: 0;
-  color: var(--gray-200);
-  font-size: 0.95rem;
+  color: var(--c-gray);
+  font-size: var(--text-small);
 }
 
 .contact-grid {
@@ -424,7 +436,7 @@ h3 {
 label {
   display: block;
   margin-bottom: 0.25rem;
-  color: var(--gray-200);
+  color: var(--c-gray);
 }
 
 input,
@@ -432,42 +444,74 @@ textarea {
   width: 100%;
   padding: 0.75rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(247, 247, 247, 0.2);
   background: transparent;
-  color: var(--white);
+  color: var(--c-white);
   margin-bottom: var(--space-sm);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border-color: var(--c-claret);
 }
 
 .form-feedback {
   margin-top: var(--space-xs);
-  color: var(--gray-200);
-}
-
-.form-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
+  color: var(--c-gray);
 }
 
 .contact-details p {
   margin-bottom: var(--space-md);
-  color: var(--gray-200);
+  color: var(--c-gray);
+}
+
+.contact-social p {
+  margin-bottom: var(--space-sm);
+  color: var(--c-gray);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 247, 247, 0.2);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--c-white);
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: var(--c-claret);
+  border-color: var(--c-claret);
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .site-footer {
   padding: var(--space-lg) 0;
   text-align: center;
-  color: var(--gray-300);
+  color: var(--c-gray);
 }
 
 .project-body {
-  background: var(--black);
+  background: var(--c-black);
 }
 
 .project-header {
   padding: var(--space-md) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.08);
 }
 
 .project-header .container {
@@ -492,8 +536,8 @@ textarea {
   aspect-ratio: 16 / 9;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #000;
+  border: 1px solid rgba(247, 247, 247, 0.12);
+  background: var(--c-black);
 }
 
 .project-video video {
@@ -516,7 +560,7 @@ textarea {
 }
 
 .project-section {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(247, 247, 247, 0.08);
   padding-bottom: var(--space-md);
 }
 
@@ -528,6 +572,10 @@ textarea {
   text-align: center;
 }
 
+.concept-body {
+  width: min(720px, 100%);
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(12px);
@@ -537,12 +585,6 @@ textarea {
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (min-width: 640px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 768px) {
@@ -562,10 +604,10 @@ textarea {
     position: absolute;
     top: 100%;
     right: 0;
-    background: var(--black);
+    background: var(--c-black);
     flex-direction: column;
     padding: var(--space-md);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(247, 247, 247, 0.08);
     transform-origin: top right;
     transform: scale(0.98);
     opacity: 0;
@@ -586,7 +628,6 @@ textarea {
     width: 40px;
     height: 40px;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -596,6 +637,12 @@ textarea {
 
   .hero {
     text-align: left;
+  }
+}
+
+@media (max-width: 359px) {
+  .team-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -3,9 +3,6 @@ const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 const form = document.querySelector("#contact-form");
 const feedback = document.querySelector("#form-feedback");
-const actions = document.querySelector("#form-actions");
-const copyBtn = document.querySelector("#copy-message");
-const mailtoLink = document.querySelector("#mailto-link");
 const yearSpan = document.querySelector("#year");
 const hero = document.querySelector(".hero");
 const heroVideo = document.querySelector(".hero-video");
@@ -94,10 +91,6 @@ if (slider) {
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const buildMessage = (name, email, message) => {
-  return `Nom: ${name}\nEmail: ${email}\n\n${message}`;
-};
-
 form?.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = document.querySelector("#name").value.trim();
@@ -106,32 +99,15 @@ form?.addEventListener("submit", (event) => {
 
   if (!name || !email || !message) {
     feedback.textContent = "Merci de remplir tous les champs.";
-    actions.hidden = true;
     return;
   }
 
   if (!emailPattern.test(email)) {
     feedback.textContent = "Merci de renseigner un email valide.";
-    actions.hidden = true;
     return;
   }
 
-  const fullMessage = buildMessage(name, email, message);
   feedback.textContent = "Message pret a etre envoye.";
-  actions.hidden = false;
-
-  const subject = encodeURIComponent("Contact Femto Films");
-  const body = encodeURIComponent(fullMessage);
-  mailtoLink.href = `mailto:contact@femtofilms.fr?subject=${subject}&body=${body}`;
-
-  copyBtn.onclick = async () => {
-    try {
-      await navigator.clipboard.writeText(fullMessage);
-      feedback.textContent = "Message copie.";
-    } catch {
-      feedback.textContent = "Copie impossible. Veuillez copier manuellement.";
-    }
-  };
 });
 
 const revealElements = document.querySelectorAll("[data-reveal]");
