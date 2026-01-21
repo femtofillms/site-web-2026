@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Femto Films — Production audiovisuelle</title>
-    <meta name="description" content="Femto Films, société de production audiovisuelle. Pub, films corporate, post-production." />
+    <title>Femto Films - Production audiovisuelle</title>
+    <meta name="description" content="Femto Films, societe de production audiovisuelle. Pub, films corporate, post-production." />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -13,7 +13,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="#top" aria-label="Femto Films, accueil">
-          <span>Femto Films</span>
+          <img src="assets/img/logo_femto.png" alt="Femto Films" />
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -23,8 +23,8 @@
 
         <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
           <a href="#top">Accueil</a>
-          <a href="#offres">Offres</a>
-          <a href="#apropos">À propos</a>
+          <a href="#productions">Productions</a>
+          <a href="#equipe">Equipe</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -39,57 +39,97 @@
             muted
             loop
             playsinline
-            poster="assets/showreel-poster.jpg"
+            preload="metadata"
+            poster="assets/img/poster-hero.png"
           >
-            <source src="assets/showreel.mp4" type="video/mp4" />
+            <source src="assets/video/showreel-hero.mp4" type="video/mp4" />
           </video>
-          <img class="hero-poster" src="assets/showreel-poster.jpg" alt="" />
+          <img class="hero-poster" src="assets/img/poster-hero.png" alt="" />
           <div class="hero-overlay"></div>
         </div>
 
         <div class="container hero-content">
           <p class="eyebrow">Femto Films</p>
-          <h1>Société de production audiovisuelle</h1>
-          <p class="hero-offer">Pub — Films corpo — Post-production</p>
+          <h1>Societe de production audiovisuelle</h1>
+          <p class="hero-offer">Pub - Films corpo - Post-production</p>
           <a class="btn" href="#contact">Nous contacter</a>
         </div>
       </section>
 
-      <section id="offres" class="section" data-reveal>
+      <section id="productions" class="section productions" data-reveal>
         <div class="container">
-          <h2>Offres</h2>
-          <div class="cards">
-            <article class="card">
-              <h3>Pub</h3>
-              <p>Des formats courts, efficaces, pensés pour marquer rapidement les esprits.</p>
-            </article>
-            <article class="card">
-              <h3>Films corpo</h3>
-              <p>Des récits clairs et humains pour valoriser votre culture et vos équipes.</p>
-            </article>
-            <article class="card">
-              <h3>Post-production</h3>
-              <p>Montage, étalonnage, son : une finition soignée et cohérente.</p>
-            </article>
+          <div class="section-head">
+            <div>
+              <h2>Nos dernieres productions</h2>
+            </div>
+          </div>
+
+          <div class="project-slider" data-slider id="productions-slider" aria-label="Liste des projets">
+            <a class="project-card" href="dnm.html">
+              <img src="assets/img/affiche-dnm.jpeg" alt="Affiche DNM" loading="lazy" />
+            </a>
+            <a class="project-card" href="spesncat.html">
+              <img src="assets/img/affiche-spesnecat.jpeg" alt="Affiche SPESNCAT" loading="lazy" />
+            </a>
+            <a class="project-card" href="traces.html">
+              <img src="assets/img/affiche-traces.jpeg" alt="Affiche Traces" loading="lazy" />
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="apropos" class="section" data-reveal>
-        <div class="container two-col">
-          <div>
-            <h2>Qui nous sommes</h2>
-            <p>
-              Femto Films accompagne les marques et les équipes internes dans la production de contenus
-              audiovisuels précis et élégants. Nous privilégions l'écoute, la préparation et une
-              réalisation fluide pour servir le message sans artifice. Notre exigence se traduit par une
-              image nette, un son maîtrisé et une post-production attentive aux détails.
-            </p>
-          </div>
-          <div class="points">
-            <p>Écoute</p>
-            <p>Image &amp; son</p>
-            <p>Post-prod soignée</p>
+      <section id="equipe" class="section team" data-reveal>
+        <div class="container">
+          <h2>Equipe</h2>
+          <div class="team-grid">
+            <article class="team-card" tabindex="0">
+              <div class="team-photo">
+                <img src="assets/img/team-antoine.webp" alt="Antoine" loading="lazy" />
+                <div class="team-overlay">
+                  <p>Realisation • Image • Direction artistique</p>
+                </div>
+              </div>
+              <div class="team-meta">
+                <h3>Antoine</h3>
+                <p class="team-role">Realisation • Image • Direction artistique</p>
+              </div>
+            </article>
+            <article class="team-card" tabindex="0">
+              <div class="team-photo">
+                <img src="assets/img/team-max.webp" alt="Maxime" loading="lazy" />
+                <div class="team-overlay">
+                  <p>Realisation • Son • Post-production</p>
+                </div>
+              </div>
+              <div class="team-meta">
+                <h3>Maxime</h3>
+                <p class="team-role">Realisation • Son • Post-production</p>
+              </div>
+            </article>
+            <article class="team-card" tabindex="0">
+              <div class="team-photo">
+                <img src="assets/img/team-emma.webp" alt="Emma" loading="lazy" />
+                <div class="team-overlay">
+                  <p>Production • Coordination • Casting</p>
+                </div>
+              </div>
+              <div class="team-meta">
+                <h3>Emma</h3>
+                <p class="team-role">Production • Coordination • Casting</p>
+              </div>
+            </article>
+            <article class="team-card" tabindex="0">
+              <div class="team-photo">
+                <img src="assets/img/team-alex.webp" alt="Alex" loading="lazy" />
+                <div class="team-overlay">
+                  <p>Creation • Musique • Support plateau</p>
+                </div>
+              </div>
+              <div class="team-meta">
+                <h3>Alex</h3>
+                <p class="team-role">Creation • Musique • Support plateau</p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -119,7 +159,7 @@
 
             <div class="contact-details">
               <p><strong>Email</strong><br />contact@femtofilms.fr</p>
-              <p><strong>Réseaux</strong><br />instagram.com/femtofilms</p>
+              <p><strong>Reseaux</strong><br />instagram.com/femtofilms</p>
             </div>
           </div>
         </div>
@@ -128,7 +168,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>Femto Films — Tous droits réservés <span id="year"></span></p>
+        <p>Femto Films - Tous droits reserves <span id="year"></span></p>
       </div>
     </footer>
 

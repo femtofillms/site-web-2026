@@ -1,4 +1,4 @@
-﻿const header = document.querySelector(".site-header");
+const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 const form = document.querySelector("#contact-form");
@@ -7,9 +7,40 @@ const actions = document.querySelector("#form-actions");
 const copyBtn = document.querySelector("#copy-message");
 const mailtoLink = document.querySelector("#mailto-link");
 const yearSpan = document.querySelector("#year");
+const hero = document.querySelector(".hero");
+const heroVideo = document.querySelector(".hero-video");
+const teamCards = document.querySelectorAll(".team-card");
+const slider = document.querySelector("[data-slider]");
 
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
+}
+
+const showHeroPoster = () => {
+  hero?.classList.add("hero--poster");
+};
+
+if (heroVideo) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    showHeroPoster();
+    heroVideo.pause();
+  } else {
+    const attempt = heroVideo.play();
+    if (attempt && typeof attempt.catch === "function") {
+      attempt.catch(() => {
+        showHeroPoster();
+      });
+    }
+
+    heroVideo.addEventListener("ended", () => {
+      heroVideo.currentTime = 0;
+      heroVideo.play();
+    });
+  }
+
+  heroVideo.addEventListener("error", showHeroPoster);
 }
 
 const closeNav = () => {
@@ -27,6 +58,39 @@ nav?.addEventListener("click", (event) => {
     closeNav();
   }
 });
+
+const clearTeamActives = () => {
+  teamCards.forEach((card) => card.classList.remove("is-active"));
+};
+
+teamCards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isActive = card.classList.toggle("is-active");
+    if (isActive) {
+      teamCards.forEach((other) => {
+        if (other !== card) {
+          other.classList.remove("is-active");
+        }
+      });
+    }
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      card.classList.toggle("is-active");
+    }
+  });
+});
+
+document.addEventListener("click", () => {
+  clearTeamActives();
+});
+
+if (slider) {
+  slider.setAttribute("tabindex", "0");
+}
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
