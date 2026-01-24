@@ -18,9 +18,7 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="#top" aria-label="Femto Films, accueil">
-          <img src="assets/img/logo_femto.png" alt="Femto Films" />
-        </a>
+        <a class="logo" href="#top" aria-label="Accueil – Femto Films">FEMTO | FILMS</a>
 
         <button
           class="nav-toggle"
@@ -60,10 +58,16 @@
         </div>
 
         <div class="container hero-content">
-          <p class="eyebrow">Femto Films</p>
-          <h1>Société de production audiovisuelle</h1>
-          <p class="hero-offer">Pub - Films corpo - Post-production</p>
-          <a class="btn" href="#contact">Nous contacter</a>
+          <div class="hero-copy">
+            <div class="hero-lines">
+            <h1 class="hero-line">Société de production audiovisuelle</h1>
+            <p class="hero-line">Publicité</p>
+            <p class="hero-line">Films Corporate</p>
+            <p class="hero-line">Post Production</p>
+          </div>
+          <p class="hero-tagline">vous faire voyager</p>
+          <a class="btn" href="mailto:femtofilms@gmail.com">Nous contacter</a>
+          </div>
         </div>
       </section>
 
@@ -160,44 +164,9 @@
       <section id="contact" class="section" data-reveal>
         <div class="container">
           <h2>Contact</h2>
-          <div class="contact-grid">
-            <form id="contact-form" novalidate>
-              <label for="name">Nom</label>
-              <input id="name" name="name" type="text" required />
-
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
-
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-
-              <button class="btn" type="submit">Envoyer</button>
-              <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
-            </form>
-
-            <div class="contact-details">
-              <p><strong>Email</strong><br />contact@femtofilms.fr</p>
-              <div class="contact-social">
-                <p><strong>Reseaux</strong></p>
-                <div class="social-links">
-                  <a href="TODO_INSTAGRAM_URL" aria-label="Instagram Femto Films">
-                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path
-                        d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3zm10 2H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zm-5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5-2.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"
-                      />
-                    </svg>
-                  </a>
-                  <a href="TODO_LINKEDIN_URL" aria-label="LinkedIn Femto Films">
-                    <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path
-                        d="M6.94 6.5A1.44 1.44 0 1 1 4.06 6.5a1.44 1.44 0 0 1 2.88 0zM4.5 9h2.88v10.5H4.5V9zm6.12 0h2.76v1.44h.04c.38-.72 1.32-1.48 2.72-1.48 2.92 0 3.46 1.92 3.46 4.42V19.5h-2.88v-5.1c0-1.22-.02-2.8-1.7-2.8-1.72 0-1.98 1.34-1.98 2.72v5.18H10.62V9z"
-                      />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p class="contact-email">
+            <a href="mailto:femtofilms@gmail.com">femtofilms@gmail.com</a>
+          </p>
         </div>
       </section>
     </main>

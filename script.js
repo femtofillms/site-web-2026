@@ -1,8 +1,6 @@
 const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
-const form = document.querySelector("#contact-form");
-const feedback = document.querySelector("#form-feedback");
 const yearSpan = document.querySelector("#year");
 const hero = document.querySelector(".hero");
 const heroVideo = document.querySelector(".hero-video");
@@ -88,27 +86,6 @@ document.addEventListener("click", () => {
 if (slider) {
   slider.setAttribute("tabindex", "0");
 }
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = document.querySelector("#name").value.trim();
-  const email = document.querySelector("#email").value.trim();
-  const message = document.querySelector("#message").value.trim();
-
-  if (!name || !email || !message) {
-    feedback.textContent = "Merci de remplir tous les champs.";
-    return;
-  }
-
-  if (!emailPattern.test(email)) {
-    feedback.textContent = "Merci de renseigner un email valide.";
-    return;
-  }
-
-  feedback.textContent = "Message pret a etre envoye.";
-});
 
 const revealElements = document.querySelectorAll("[data-reveal]");
 

@@ -2,7 +2,6 @@
   --c-black: #0a0a0a;
   --c-white: #f7f7f7;
   --c-gray: #bdbdbd;
-  --c-claret: #911041;
   --font-main: "Space Grotesk", sans-serif;
   --text-h1: clamp(2rem, 3vw + 1rem, 3.5rem);
   --text-h2: clamp(1.1rem, 1.4vw + 0.7rem, 1.6rem);
@@ -74,10 +73,8 @@ select {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
 .team-card:focus-visible {
-  outline: 2px solid var(--c-claret);
+  outline: 2px solid var(--c-white);
   outline-offset: 2px;
 }
 
@@ -127,9 +124,14 @@ textarea:focus-visible,
   padding: 0.5rem 0;
 }
 
-.logo img {
-  height: 44px;
-  width: auto;
+.logo {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--c-white);
+  display: inline-flex;
+  align-items: center;
 }
 
 .back-link {
@@ -139,7 +141,8 @@ textarea:focus-visible,
 
 .back-link:hover,
 .back-link:focus-visible {
-  color: var(--c-claret);
+  color: var(--c-white);
+  text-decoration: underline;
 }
 
 .site-nav {
@@ -154,7 +157,8 @@ textarea:focus-visible,
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--c-claret);
+  color: var(--c-white);
+  text-decoration: underline;
 }
 
 .nav-toggle {
@@ -193,7 +197,7 @@ textarea:focus-visible,
 
 .hero {
   padding-top: calc(var(--space-xl) + 2rem);
-  text-align: center;
+  text-align: left;
   position: relative;
   overflow: hidden;
   min-height: 70vh;
@@ -236,21 +240,16 @@ textarea:focus-visible,
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.92) 100%);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--c-gray);
-  font-size: 0.8rem;
-  margin-bottom: var(--space-sm);
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 h1,
@@ -272,10 +271,33 @@ h3 {
   font-size: 1.2rem;
 }
 
-.hero-offer {
-  font-size: 1.1rem;
+.hero-lines {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 0;
+}
+
+.hero-line {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-tagline {
+  margin: clamp(1.5rem, 2.5vw, 2.25rem) 0 var(--space-md);
   color: var(--c-gray);
-  margin-bottom: var(--space-md);
+  font-size: clamp(14px, 1.4vw, 18px);
+  font-weight: 400;
+}
+
+.hero-copy {
+  max-width: 520px;
+  margin-left: clamp(0px, 6vw, 96px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .btn {
@@ -284,8 +306,8 @@ h3 {
   justify-content: center;
   padding: 0.75rem 2rem;
   border-radius: var(--radius);
-  border: 1px solid var(--c-claret);
-  background: var(--c-claret);
+  border: 1px solid var(--c-white);
+  background: transparent;
   color: var(--c-white);
   font-weight: 500;
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
@@ -294,6 +316,8 @@ h3 {
 .btn:hover,
 .btn:focus-visible {
   transform: translateY(-2px);
+  background: var(--c-white);
+  color: var(--c-black);
 }
 
 .btn.ghost {
@@ -428,75 +452,20 @@ h3 {
   font-size: var(--text-small);
 }
 
-.contact-grid {
-  display: grid;
-  gap: var(--space-lg);
+.contact-email {
+  margin: var(--space-sm) 0 0;
+  font-size: 1.05rem;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--c-gray);
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 12px;
-  border: 1px solid rgba(247, 247, 247, 0.2);
-  background: transparent;
+.contact-email a {
   color: var(--c-white);
-  margin-bottom: var(--space-sm);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-input:focus-visible,
-textarea:focus-visible {
-  border-color: var(--c-claret);
-}
-
-.form-feedback {
-  margin-top: var(--space-xs);
-  color: var(--c-gray);
-}
-
-.contact-details p {
-  margin-bottom: var(--space-md);
-  color: var(--c-gray);
-}
-
-.contact-social p {
-  margin-bottom: var(--space-sm);
-  color: var(--c-gray);
-}
-
-.social-links {
-  display: flex;
-  gap: var(--space-sm);
-}
-
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  border: 1px solid rgba(247, 247, 247, 0.2);
-  transition: border-color 0.2s ease, color 0.2s ease;
-  color: var(--c-white);
-}
-
-.social-links a:hover,
-.social-links a:focus-visible {
-  color: var(--c-claret);
-  border-color: var(--c-claret);
-}
-
-.social-links svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
+.contact-email a:hover,
+.contact-email a:focus-visible {
+  opacity: 0.7;
 }
 
 .site-footer {
@@ -587,12 +556,6 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-  }
-}
-
 @media (min-width: 1024px) {
   .team-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -635,8 +598,13 @@ textarea:focus-visible {
     padding: var(--space-lg) 0;
   }
 
-  .hero {
-    text-align: left;
+  .hero-copy {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-line {
+    font-size: clamp(16px, 4.5vw, 22px);
   }
 }
 
