@@ -2,40 +2,12 @@ const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 const yearSpan = document.querySelector("#year");
-const hero = document.querySelector(".hero");
-const heroVideo = document.querySelector(".hero-video");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const teamCards = document.querySelectorAll(".team-card");
 const slider = document.querySelector("[data-slider]");
 
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
-}
-
-const showHeroPoster = () => {
-  hero?.classList.add("hero--poster");
-};
-
-if (heroVideo) {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (prefersReducedMotion) {
-    showHeroPoster();
-    heroVideo.pause();
-  } else {
-    const attempt = heroVideo.play();
-    if (attempt && typeof attempt.catch === "function") {
-      attempt.catch(() => {
-        showHeroPoster();
-      });
-    }
-
-    heroVideo.addEventListener("ended", () => {
-      heroVideo.currentTime = 0;
-      heroVideo.play();
-    });
-  }
-
-  heroVideo.addEventListener("error", showHeroPoster);
 }
 
 const closeNav = () => {
@@ -87,9 +59,33 @@ if (slider) {
   slider.setAttribute("tabindex", "0");
 }
 
-const revealElements = document.querySelectorAll("[data-reveal]");
+const revealElements = new Set();
+const revealSelectors = ["main .section:not(.hero) h2", ".concept-body p", ".contact-email"];
 
-if ("IntersectionObserver" in window) {
+revealSelectors.forEach((selector) => {
+  document.querySelectorAll(selector).forEach((el) => {
+    el.classList.add("reveal");
+    revealElements.add(el);
+  });
+});
+
+teamCards.forEach((card, index) => {
+  card.classList.add("reveal");
+  card.style.transitionDelay = `${index * 60}ms`;
+  revealElements.add(card);
+});
+
+document.querySelectorAll(".project-card").forEach((card, index) => {
+  card.classList.add("reveal");
+  card.style.transitionDelay = `${index * 60}ms`;
+  revealElements.add(card);
+});
+
+const revealList = Array.from(revealElements);
+
+if (prefersReducedMotion) {
+  revealList.forEach((el) => el.classList.add("is-visible"));
+} else if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -102,7 +98,7 @@ if ("IntersectionObserver" in window) {
     { threshold: 0.2 }
   );
 
-  revealElements.forEach((el) => observer.observe(el));
+  revealList.forEach((el) => observer.observe(el));
 } else {
-  revealElements.forEach((el) => el.classList.add("is-visible"));
+  revealList.forEach((el) => el.classList.add("is-visible"));
 }
