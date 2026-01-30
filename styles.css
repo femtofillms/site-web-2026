@@ -881,6 +881,17 @@ body.is-end-hero-active .end-hero-title {
   }
 }
 
+@supports (height: 100dvh) {
+  @media (max-width: 600px) {
+    .hero,
+    .hero-content,
+    .hero-video {
+      height: 100dvh;
+      min-height: 100dvh;
+    }
+  }
+}
+
 
 @media (hover: none) {
   .poster:hover,

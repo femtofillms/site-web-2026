@@ -14,7 +14,7 @@ export const PROJECTS = [
     showOnWall: true,
     posterH: "assets/img/affiche/Fiction/BIW/BIW_Affiche_Horizontale.png",
     posterV: "assets/img/affiche/Fiction/BIW/BIW_Affiche_Verticale.png",
-    url: "https://youtu.be/yq78ChgKyVk",
+    url: "https://youtu.be/H35NLbuFTlQ",
     type: "Publicité",
     duration: "1 min"
   },
