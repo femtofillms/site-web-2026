@@ -36,6 +36,7 @@ body {
   line-height: var(--line-height);
   position: relative;
   --hero-bg-progress: 0;
+  overflow-x: hidden;
 }
 
 body::after {
@@ -583,7 +584,7 @@ body.is-loaded .hero-copy {
 .end-hero-title {
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  bottom: 6%;
   transform: translate(-50%, 0);
   text-align: center;
   font-size: clamp(1.4rem, 2.6vw, 2.6rem);
@@ -899,7 +900,7 @@ body.is-end-hero-active .end-hero-title {
 
 @media (min-width: 601px) {
   .hero-video {
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
   }
 }
