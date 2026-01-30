@@ -133,7 +133,6 @@ section {
   backdrop-filter: none;
   z-index: 10;
   border-bottom: 0;
-  transition: background 0.6s ease, border-color 0.6s ease, backdrop-filter 0.6s ease;
 }
 
 main,
@@ -905,10 +904,11 @@ body.is-end-hero-active .end-hero-title {
     object-fit: cover;
   }
 
-  body.is-scrolled .site-header {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(247, 247, 247, 0.08);
+  .site-header {
+    background: rgba(0, 0, 0, calc(var(--logo-visibility, 0) * 0.95));
+    backdrop-filter: blur(calc(var(--logo-visibility, 0) * 10px));
+    border-bottom: 1px solid rgba(247, 247, 247, calc(var(--logo-visibility, 0) * 0.08));
+    transition: background 0.2s ease, border-color 0.2s ease, backdrop-filter 0.2s ease;
   }
 }
 
