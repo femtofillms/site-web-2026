@@ -62,8 +62,8 @@ export const PROJECTS = [
     id: "pat",
     title: "PAT",
     showOnWall: true,
-    posterH: "assets/img/affiche/Fiction/P.A.T./Horizontales/PAT_Affiche_Horizontal_EP1_4_compressed.webp",
-    posterV: "assets/img/affiche/Fiction/P.A.T./PAT_AFFICHE_VERTICALE_compressed.webp",
+    posterH: "assets/img/affiche/Fiction/PAT/Horizontales/PAT_Affiche_Horizontal_EP1_4_compressed.webp",
+    posterV: "assets/img/affiche/Fiction/PAT/PAT_AFFICHE_VERTICALE_compressed.webp",
     url: "https://www.youtube.com/playlist?list=PLWPwrmG41sYemO8zaLXFBDnlyghqz0xSh",
     type: "Web-série",
     duration: "5 min"
