@@ -24,7 +24,7 @@ export const PROJECTS = [
     showOnWall: true,
     posterH: "assets/img/affiche/Fiction/DNM/DNM_AFFICHE_HORIZONTALE_compressed.webp",
     posterV: "assets/img/affiche/Fiction/DNM/DNM_AFFICHE_VERTICALE_compressed.webp",
-    url: null,
+    url: "https://www.festivalnikon.fr/video/2025/1451",
     type: "Court-métrage",
     duration: "2 min 20"
   },
@@ -44,7 +44,7 @@ export const PROJECTS = [
     showOnWall: true,
     posterH: "assets/img/affiche/Fiction/TRACES/TRACES_AFFICHE_HORIZONTALE_compressed.webp",
     posterV: "assets/img/affiche/Fiction/TRACES/TRACES_AFFICHE_VERTICALE_compressed.webp",
-    url: null,
+    url: "https://www.festivalnikon.fr/video/2025/1144",
     type: "Court-métrage",
     duration: "2 min 20"
   },
