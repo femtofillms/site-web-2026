@@ -64,7 +64,7 @@ export const PROJECTS = [
     showOnWall: true,
     posterH: "assets/img/affiche/Fiction/P.A.T./Horizontales/PAT_Affiche_Horizontal_EP1_4.png",
     posterV: "assets/img/affiche/Fiction/P.A.T./PAT_AFFICHE_VERTICALE.png",
-    url: null,
+    url: "https://www.youtube.com/playlist?list=PLWPwrmG41sYemO8zaLXFBDnlyghqz0xSh",
     type: "Web-série",
     duration: "5 min"
   },
