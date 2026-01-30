@@ -462,6 +462,8 @@ body.is-loaded .hero-copy {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-align: center;
+  justify-items: center;
   opacity: 1;
   max-height: none;
   transform: none;
@@ -544,6 +546,10 @@ body.is-loaded .hero-copy {
 
 .team-meta h3 {
   margin-bottom: 0.25rem;
+}
+
+.team-meta {
+  text-align: center;
 }
 
 .team-role {
