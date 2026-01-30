@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Femto Films - Production audiovisuelle</title>
     <meta name="description" content="Femto Films, societe de production audiovisuelle. Pub, films corporate, post-production." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Femto Films - Production audiovisuelle" />
+    <meta property="og:description" content="Femto Films, societe de production audiovisuelle. Pub, films corporate, post-production." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://femtofilms.fr/assets/img/hero-title-poster_compressed.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Femto Films - Production audiovisuelle" />
+    <meta name="twitter:description" content="Femto Films, societe de production audiovisuelle. Pub, films corporate, post-production." />
+    <meta name="twitter:image" content="https://femtofilms.fr/assets/img/hero-title-poster_compressed.webp" />
+    <link rel="canonical" href="https://femtofilms.fr/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,6 +22,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Femto Films",
+        "sameAs": ["https://www.instagram.com/femtofilms/"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+33 6 29 80 61 83",
+            "contactType": "customer service",
+            "email": "femtofilms@gmail.com"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
@@ -44,10 +70,17 @@
     <main id="main">
       <section id="top" class="section hero">
         <div class="hero-media" aria-hidden="true">
-          <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-            <source src="assets/video/smartphone-hero-title.mp4" type="video/mp4" media="(max-width: 600px)" />
-            <source src="assets/video/hero-title.mp4" type="video/mp4" />
-          </video>
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="assets/img/hero-title-poster_compressed.webp"
+            data-src="assets/video/hero-title_compressed.mp4"
+            data-src-mobile="assets/video/smartphone-hero-title_compressed.mp4"
+          ></video>
           <div class="hero-overlay"></div>
         </div>
 
@@ -76,7 +109,7 @@
           <div class="team-grid">
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-antoine.jpg" alt="Antoine" loading="lazy" />
+                <img src="assets/img/team-antoine_compressed.webp" alt="Antoine" loading="lazy" />
                 <div class="team-overlay">
                   <p>Realisation • Image • Post-production</p>
                 </div>
@@ -88,7 +121,7 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-max.jpg" alt="Maxime" loading="lazy" />
+                <img src="assets/img/team-max_compressed.webp" alt="Maxime" loading="lazy" />
                 <div class="team-overlay">
                   <p>Realisation • Son • Post-production</p>
                 </div>
@@ -100,7 +133,7 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-emma.jpg" alt="Emma" loading="lazy" />
+                <img src="assets/img/team-emma_compressed.webp" alt="Emma" loading="lazy" />
                 <div class="team-overlay">
                   <p>Réseau sociaux • Coordination • Casting</p>
                 </div>
@@ -112,7 +145,7 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-alex.jpg" alt="Alex" loading="lazy" />
+                <img src="assets/img/team-alex_compressed.webp" alt="Alex" loading="lazy" />
                 <div class="team-overlay">
                   <p>Compositeur • Graphiste • Support plateau</p>
                 </div>

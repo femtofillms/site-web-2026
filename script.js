@@ -8,6 +8,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const teamCards = document.querySelectorAll(".team-card");
 const heroMedia = document.querySelector(".hero-media");
 const heroSection = document.querySelector(".hero");
+const heroVideo = document.querySelector(".hero-video");
 const posterWall = document.querySelector(".poster-wall");
 
 if (yearSpan) {
@@ -107,6 +108,73 @@ if (heroMedia && heroSection) {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", updateHeroVideoState);
 }
+
+const loadHeroVideo = (forceReload = false) => {
+  if (!heroVideo) {
+    return;
+  }
+
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+  const src = isMobile ? heroVideo.dataset.srcMobile : heroVideo.dataset.src;
+
+  if (!src) {
+    return;
+  }
+
+  if (!forceReload && heroVideo.dataset.loaded === "true") {
+    return;
+  }
+
+  heroVideo.querySelectorAll("source").forEach((source) => source.remove());
+
+  const source = document.createElement("source");
+  source.src = src;
+  source.type = "video/mp4";
+  heroVideo.appendChild(source);
+  heroVideo.dataset.loaded = "true";
+  heroVideo.dataset.currentSrc = src;
+  heroVideo.load();
+
+  const playPromise = heroVideo.play();
+  if (playPromise && typeof playPromise.catch === "function") {
+    playPromise.catch(() => {});
+  }
+};
+
+if (heroSection && heroVideo) {
+  if (prefersReducedMotion) {
+    loadHeroVideo();
+  } else if ("IntersectionObserver" in window) {
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            loadHeroVideo();
+            heroObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    heroObserver.observe(heroSection);
+  } else {
+    loadHeroVideo();
+  }
+}
+
+const refreshHeroVideoForViewport = () => {
+  if (!heroVideo || heroVideo.dataset.loaded !== "true") {
+    return;
+  }
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+  const expected = isMobile ? heroVideo.dataset.srcMobile : heroVideo.dataset.src;
+  if (expected && heroVideo.dataset.currentSrc !== expected) {
+    loadHeroVideo(true);
+  }
+};
+
+window.addEventListener("resize", refreshHeroVideoForViewport);
 
 const revealElements = new Set();
 const revealSelectors = [
