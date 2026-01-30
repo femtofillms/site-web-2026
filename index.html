@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -18,7 +18,9 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="#top" aria-label="Accueil – Femto Films">FEMTO | FILMS</a>
+        <a class="logo" href="#top" aria-label="Accueil – Femto Films">
+          FEMTO <span class="logo-thin">FILMS</span>
+        </a>
 
         <button
           class="nav-toggle"
@@ -40,73 +42,43 @@
     </header>
 
     <main id="main">
-      <section id="top" class="section hero" data-reveal>
+      <section id="top" class="section hero">
+        <div class="hero-media" aria-hidden="true">
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/video/smartphone-hero-title.mp4" type="video/mp4" media="(max-width: 600px)" />
+            <source src="assets/video/hero-title.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay"></div>
+        </div>
+
         <div class="container hero-content">
           <div class="hero-copy">
             <div class="hero-lines">
-            <h1 class="hero-line">Société de production audiovisuelle</h1>
-            <p class="hero-line">Publicité</p>
-            <p class="hero-line">Films Corporate</p>
-            <p class="hero-line">Post Production</p>
-          </div>
-          <p class="hero-tagline">vous faire voyager</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="productions" class="section productions" data-reveal>
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <h2>Nos dernieres productions</h2>
+              <h1 class="hero-line">Société de production audiovisuelle</h1>
+              <p class="hero-line-thin"> Publicité <br />  Film Corporate <br /> Fiction</p>
             </div>
           </div>
-
-          <div class="project-slider" data-slider id="productions-slider" aria-label="Liste des projets">
-            <a class="project-card" href="dnm.html">
-              <img src="assets/img/affiche-dnm.jpeg" alt="Affiche DNM" loading="lazy" />
-            </a>
-            <a class="project-card" href="spesncat.html">
-              <img src="assets/img/affiche-spesnecat.jpeg" alt="Affiche SPESNCAT" loading="lazy" />
-            </a>
-            <a class="project-card" href="traces.html">
-              <img src="assets/img/affiche-traces.jpeg" alt="Affiche Traces" loading="lazy" />
-            </a>
-          </div>
-
-          <div class="productions-videos">
-            <article class="video-item">
-              <p class="video-label">SHOWREEL 2025</p>
-              <div class="video-frame">
-                <video controls preload="metadata" title="Showreel 2025">
-                  <source src="assets/video/showreel-hero.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </article>
-            <article class="video-item">
-              <p class="video-label">BACON IN THE WEST</p>
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/yq78ChgKyVk?controls=1&modestbranding=1&rel=0&autoplay=0"
-                  title="Bacon in the West"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </article>
-          </div>
         </div>
       </section>
 
-      <section id="equipe" class="section team" data-reveal>
+      <section id="productions" class="section productions">
         <div class="container">
-          <h2>Equipe</h2>
+          <h2 class="section-title-light">Nos dernières productions</h2>
+        </div>
+        <div class="poster-wall-wrap" aria-label="Mur d'affiches">
+          <div class="poster-wall"></div>
+        </div>
+      </section>
+
+      <section id="equipe" class="section team">
+        <div class="container">
+          <h2 class="section-title-light">Equipe</h2>
           <div class="team-grid">
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-antoine.webp" alt="Antoine" loading="lazy" />
+                <img src="assets/img/team-antoine.jpg" alt="Antoine" loading="lazy" />
                 <div class="team-overlay">
-                  <p>Realisation • Image • Direction artistique</p>
+                  <p>Realisation • Image • Post-production</p>
                 </div>
               </div>
               <div class="team-meta">
@@ -116,7 +88,7 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-max.webp" alt="Maxime" loading="lazy" />
+                <img src="assets/img/team-max.jpg" alt="Maxime" loading="lazy" />
                 <div class="team-overlay">
                   <p>Realisation • Son • Post-production</p>
                 </div>
@@ -128,9 +100,9 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-emma.webp" alt="Emma" loading="lazy" />
+                <img src="assets/img/team-emma.jpg" alt="Emma" loading="lazy" />
                 <div class="team-overlay">
-                  <p>Production • Coordination • Casting</p>
+                  <p>Réseau sociaux • Coordination • Casting</p>
                 </div>
               </div>
               <div class="team-meta">
@@ -140,9 +112,9 @@
             </article>
             <article class="team-card" tabindex="0">
               <div class="team-photo">
-                <img src="assets/img/team-alex.webp" alt="Alex" loading="lazy" />
+                <img src="assets/img/team-alex.jpg" alt="Alex" loading="lazy" />
                 <div class="team-overlay">
-                  <p>Creation • Musique • Support plateau</p>
+                  <p>Compositeur • GraphisteSupport plateau</p>
                 </div>
               </div>
               <div class="team-meta">
@@ -154,24 +126,15 @@
         </div>
       </section>
 
-      <section id="concept" class="section concept" data-reveal>
-        <div class="container">
-          <h2>"Vous faire voyager"</h2>
-          <div class="concept-body">
-            <p>
-              Notre concept est de faire voyager les gens, de les emmener dans un univers different, en
-              leur proposant un contenu qui sort du quotidien blabla.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section" data-reveal>
-        <div class="container">
-          <h2>Contact</h2>
-          <p class="contact-email">
-            <a href="mailto:femtofilms@gmail.com">femtofilms@gmail.com</a>
-          </p>
+      <section id="contact" class="section end-hero" aria-label="Fin de page">
+        <div class="end-hero-kicker" aria-hidden="true">Qui sommes nous</div>
+        <p class="end-hero-paragraph" aria-hidden="true">
+          Femto Films est une société de production française provençale, fondée en 2024 par Antoine Biguet et Maxime Castello, deux amis passionnés par les belles images et les histoires bien racontées.
+          <br>Nous aimons développer un univers fictif, proposer un voyage via les décors et les costumes, chercher l'émotion.
+        </p>
+        <div class="end-hero-title" aria-hidden="true">
+          <div class="end-hero-title-text">Contact</div>
+          <a class="end-hero-email" href="mailto:femtofilms@gmail.com">femtofilms@gmail.com</a>
         </div>
       </section>
     </main>
@@ -182,6 +145,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
