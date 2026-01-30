@@ -656,6 +656,25 @@ body.is-loaded .hero-copy {
   pointer-events: auto;
 }
 
+.end-hero-instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.5rem;
+  color: var(--c-white);
+  opacity: 0.85;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+}
+
+.end-hero-instagram svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
 body.is-end-hero-active .end-hero-email:hover,
 body.is-end-hero-active .end-hero-email:focus-visible {
   opacity: 0.7;
@@ -664,6 +683,11 @@ body.is-end-hero-active .end-hero-email:focus-visible {
 body.is-end-hero-active .end-hero-phone:hover,
 body.is-end-hero-active .end-hero-phone:focus-visible {
   opacity: 0.7;
+}
+
+body.is-end-hero-active .end-hero-instagram:hover,
+body.is-end-hero-active .end-hero-instagram:focus-visible {
+  opacity: 1;
 }
 
 body.is-end-hero-active .end-hero-kicker {
@@ -712,6 +736,7 @@ body.is-end-hero-active .end-hero-title {
   text-align: center;
   color: var(--c-gray);
 }
+
 
 .project-body {
   background: var(--c-black);
