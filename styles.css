@@ -863,6 +863,22 @@ body.is-end-hero-active .end-hero-title {
   .poster-wall > :last-child {
     display: none;
   }
+
+  .hero,
+  .hero-content {
+    min-height: 100vh;
+  }
+
+  .hero-video {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 601px) {
+  .hero-video {
+    width: 100vw;
+    object-fit: cover;
+  }
 }
 
 
