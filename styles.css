@@ -112,7 +112,7 @@ button:focus-visible,
 .section {
   padding: var(--space-xl) 0;
   background: transparent;
-  border-bottom: 1px solid rgba(247, 247, 247, 0.08);
+  border-bottom: 0;
 }
 
 section {
@@ -644,8 +644,24 @@ body.is-loaded .hero-copy {
   pointer-events: auto;
 }
 
+.end-hero-phone {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--c-white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  pointer-events: auto;
+}
+
 body.is-end-hero-active .end-hero-email:hover,
 body.is-end-hero-active .end-hero-email:focus-visible {
+  opacity: 0.7;
+}
+
+body.is-end-hero-active .end-hero-phone:hover,
+body.is-end-hero-active .end-hero-phone:focus-visible {
   opacity: 0.7;
 }
 
@@ -871,6 +887,13 @@ body.is-end-hero-active .end-hero-title {
 
   .hero-video {
     height: 100vh;
+    object-fit: cover;
+  }
+
+  .site-header {
+    background: transparent;
+    border-bottom: 0;
+    backdrop-filter: none;
   }
 }
 
